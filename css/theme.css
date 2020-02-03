@@ -1,14 +1,19 @@
 /* CORE TEMPLATE STYLES
  *
  * Styles for setting a custom theme
- ==========================================*/ 
+ ==========================================*/
 
 p { font-size: 1.1em }
+
+@font-face {
+	font-family: 'Ferrite';
+	 src: url('../fonts/FerriteCore-Regular.otf');
+}
 
 /* Splash Page 001 */
 .splash-cover {
 	height: 100vh;
-	background-image: url('../../assets/images/rough-concrete.jpg');
+	background-image: url('../assets/gifs/cover-2.gif');
 	background-position: center; background-size: cover;
 }
 .feature-cover {
@@ -43,4 +48,8 @@ p { font-size: 1.1em }
 .email-body { width: 600px; margin: 0 auto !important; display: block;}
 @media only screen and (max-width: 620px) {
 	.email-body { width: 100%; }
+}
+
+.ferrite {
+	font-family: 'Ferrite'
 }
