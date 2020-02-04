@@ -10,6 +10,10 @@ p { font-size: 1.1em }
 	 src: url('../fonts/FerriteCore-Regular.otf');
 }
 
+.comic-sans {
+	font-family: 'Comic Sans MS';
+}
+
 /* Splash Page 001 */
 .splash-cover {
 	height: 100vh;
