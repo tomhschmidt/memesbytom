@@ -30,6 +30,24 @@
 	<!-- CSS  -->
 	<link href="css/core/core.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	<link href="css/theme.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+	<script> (function(d, s) {
+		var js = d.createElement(s),
+		sc = d.getElementsByTagName(s)[0];
+		js.src="https://paywall.unlock-protocol.com/static/unlock.1.0.min.js";
+		sc.parentNode.insertBefore(js, sc); }(document, "script"));
+	</script>
+	<script>
+		var unlockProtocolConfig = {
+  locks: {
+    '0xa12Ecb20E61E718d003E9192B57270f2c931BA13': { }
+  },
+  icon: 'https://app.unlock-protocol.com/static/images/svg/default.svg',
+  callToAction: {
+    default: 'This content is locked. Pay with $TOM to access it!'
+  }
+}
+	</script>
 </head>
 <body>
 	<div class="splash-cover">
@@ -131,6 +149,8 @@
 		<div class="col-sm-0 col-md-3 col-lg-3">
 		</div>
 	</div>
+
+
 	<div class="row feature-cover">
 			<div class="container">
 				<div class="row">
@@ -138,6 +158,8 @@
 						<p class="flow-text lucida-text red-text bezier-text ">Past Work and Track Record</p>
 					</div>
 				</div>
+			</div>
+
 				<div class="row">
 					<div class="col-sm-12 col-md-12 col-lg-12">
 						<div style="display: block; padding: 2em;"></div>
@@ -161,7 +183,24 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
+
+						<div class="row unlocked">
+					<div class="col-sm-12">
+						<p class="flow-text lucida-text red-text">There is more! You need to become member to access the rest of the collection!</p>
+						<div class="padded blue-border border-solid-thick">
+							<span class="small-btn full-btn lime blue-text invert-hover flow-text box-shadow" onclick="window.unlockProtocol && window.unlockProtocol.loadCheckoutModal()">
+									<strong>Become a member NOW!
+										<span class="blink">🔓</span>
+									</strong>
+							</span>
+						</div>
+					</div>
+					<div class="col-sm-0 col-md-3 col-lg-3">
+						&nbsp;
+					</div>
+				</div>
+
+						<div class="row locked">
 							<div class="col s12 col-md-4">
 								<div class="revelation monochrome">
 									<img src="assets/images/4.png" class="responsive" />
@@ -178,7 +217,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row locked">
 							<div class="col s12 col-md-4">
 								<div class="revelation monochrome">
 									<img src="assets/images/7.jpeg" class="responsive" />
@@ -195,7 +234,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row locked">
 							<div class="col s12 col-md-4">
 								<div class="revelation monochrome">
 									<img src="assets/images/10.jpeg" class="responsive" />
@@ -212,7 +251,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row locked">
 							<div class="col s12 col-md-4">
 								<div class="revelation monochrome">
 									<img src="assets/images/13.png" class="responsive" />
@@ -229,7 +268,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row locked">
 							<div class="col s12 col-md-4">
 								<div class="revelation monochrome">
 									<img src="assets/images/16.jpeg" class="responsive" />
@@ -250,6 +289,8 @@
 				</div>
 		</div>
 	</div>
+
+
 	<div class="row gray">
 		<div class="col-sm-12">
 			<h3 id="page-content" class="lucida-text center fittext-h3 vanilla-bean-text ferrite">Terms</h3>
@@ -304,6 +345,29 @@
 
   gtag('config', 'UA-39574732-7');
 </script>
-
+<script>
+	window.addEventListener('unlockProtocol', function(e) {
+  	var state = e.detail
+		if (state === 'locked') {
+			// Hide all element with class 'locked'
+			// Show all element with class 'unlocked'
+			document.querySelectorAll('.locked').forEach(adElement => {
+        adElement.style.display = 'none'
+      })
+			document.querySelectorAll('.unlocked').forEach(adElement => {
+        adElement.style.display = 'block'
+      })
+		} else if (state === 'unlocked') {
+			// Show all element with class 'locked'
+			// Hide all element with class 'unlocked'
+			document.querySelectorAll('.locked').forEach(adElement => {
+        adElement.style.display = 'block'
+      })
+			document.querySelectorAll('.unlocked').forEach(adElement => {
+        adElement.style.display = 'none'
+      })
+		}
+	})
+</script>
 </body>
 </html>
