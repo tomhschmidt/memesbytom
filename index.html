@@ -31,23 +31,6 @@
 	<link href="css/core/core.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	<link href="css/theme.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
-	<script> (function(d, s) {
-		var js = d.createElement(s),
-		sc = d.getElementsByTagName(s)[0];
-		js.src="https://paywall.unlock-protocol.com/static/unlock.1.0.min.js";
-		sc.parentNode.insertBefore(js, sc); }(document, "script"));
-	</script>
-	<script>
-		var unlockProtocolConfig = {
-  locks: {
-    '0xa12Ecb20E61E718d003E9192B57270f2c931BA13': { }
-  },
-  icon: 'https://app.unlock-protocol.com/static/images/svg/default.svg',
-  callToAction: {
-    default: 'This content is locked. Pay with $TOM to access it!'
-  }
-}
-	</script>
 </head>
 <body>
 	<div class="splash-cover">
@@ -138,7 +121,7 @@
 		<div class="col-sm-12 col-md-6 col-lg-6">
 			<div class="comfortable">
 				<div class="padded blue-border border-solid-thick">
-					<a href="https://uniswap.exchange/swap?outputCurrency=0x9cda02b2a43f16f11c6860a8630672de9854d6f7" class="small-btn full-btn lime blue-text invert-hover flow-text box-shadow">
+					<a href="https://app.uniswap.org/#/swap?outputCurrency=0x9cda02b2a43f16f11c6860a8630672de9854d6f7&use=v1" class="small-btn full-btn lime blue-text invert-hover flow-text box-shadow">
 							<strong>Buy on Uniswap
 								<span class="blink">&rarr;</span>
 							</strong>
@@ -344,30 +327,6 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-39574732-7');
-</script>
-<script>
-	window.addEventListener('unlockProtocol', function(e) {
-  	var state = e.detail
-		if (state === 'locked') {
-			// Hide all element with class 'locked'
-			// Show all element with class 'unlocked'
-			document.querySelectorAll('.locked').forEach(adElement => {
-        adElement.style.display = 'none'
-      })
-			document.querySelectorAll('.unlocked').forEach(adElement => {
-        adElement.style.display = 'block'
-      })
-		} else if (state === 'unlocked') {
-			// Show all element with class 'locked'
-			// Hide all element with class 'unlocked'
-			document.querySelectorAll('.locked').forEach(adElement => {
-        adElement.style.display = 'block'
-      })
-			document.querySelectorAll('.unlocked').forEach(adElement => {
-        adElement.style.display = 'none'
-      })
-		}
-	})
 </script>
 </body>
 </html>
